@@ -19,6 +19,7 @@ class TestingConfig(Config):
     FLASK_ENV = 'testing'
     TESTING = True
 
+
 config = {
     'development': DevelopmentConfig,
     'testing': TestingConfig,
