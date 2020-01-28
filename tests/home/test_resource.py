@@ -7,7 +7,6 @@ def test_home_response(client):
     """
     import json
 
-
     response = client.get('/')
 
     data = json.loads(response.data.decode('utf-8'))
