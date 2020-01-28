@@ -16,6 +16,15 @@ if isfile(_ENV_FILE):
     load_dotenv(dotenv_path=_ENV_FILE)
 
 
+@pytest.fixture(scope='function')
+def mongo(request, client):
+    
+    def fin():
+        print('\n[teardown] disconnect from db')
+
+    fin()
+
+
 @pytest.fixture(scope='session')
 def client():
     from apps import create_app
